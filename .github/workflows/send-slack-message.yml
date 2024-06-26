@@ -1,0 +1,36 @@
+
+name: Send Slack Message
+
+on:
+  schedule:
+    - cron: "0 10 * * 1-5"  # 매일 월요일부터 금요일까지 오전 10시에 실행
+  push:
+    branches:
+      - main
+
+jobs:
+  send-message:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.12.4'  # 필요한 Python 버전을 설정
+
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install slack_sdk holidays requests
+
+    - name: Run script
+      env:
+        SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+      run: |
+        source venv/bin/activate
+        python example.py

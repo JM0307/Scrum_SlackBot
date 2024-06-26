@@ -1,7 +1,6 @@
 
 import datetime
 import requests
-import holidays
 from datetime import datetime
 from pytimekr import pytimekr
 from slack_sdk import WebClient
