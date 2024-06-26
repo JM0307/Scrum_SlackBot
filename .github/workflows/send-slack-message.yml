@@ -3,7 +3,7 @@ name: Send Slack Message
 
 on:
   schedule:
-    - cron: "2 * * * *"  # 매일 월요일부터 금요일까지 오전 10시에 실행
+    - cron: "*/2 * * * 1-5"  # 매일 월요일부터 금요일까지 오전 10시에 실행
   push:
     branches:
       - main
