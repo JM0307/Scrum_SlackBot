@@ -25,7 +25,7 @@ jobs:
       run: |
         python -m venv venv
         source venv/bin/activate
-        pip install slack_sdk holidays requests
+        pip install slack_sdk holidays requests pytimekr
 
     - name: Run script
       env:
