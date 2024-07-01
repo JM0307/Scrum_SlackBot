@@ -7,7 +7,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 # Slack API 토큰과 채널 설정
-slack_token = "xoxb-15296271571-7350680057280-sji6R6HSGcw8ewRLXr8VF1ZT"
+slack_token = "slack-token"
 channel_id = "#슬랙봇-테스트"
 client = WebClient(token=slack_token)
 
